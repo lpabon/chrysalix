@@ -61,3 +61,6 @@ test_ring...OK
 test_sync...OK
 
 ```
+
+Type `<CTRL>-C` to quit.
+
