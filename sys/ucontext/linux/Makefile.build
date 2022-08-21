@@ -1,0 +1,8 @@
+
+#This is from the point of view of the "build" directory
+
+TARGET = chrysalixos
+TYPE = OS_EXECPROGRAM
+OBJS = kern.a
+CLEANS = $(TARGET)
+
