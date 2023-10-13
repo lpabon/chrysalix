@@ -32,5 +32,6 @@
 
 void tests_console_register( void );
 void test_klib_ring( void );
+void test_threading( void );
 
 #endif /* _TESTS_H */

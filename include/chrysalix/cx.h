@@ -30,6 +30,6 @@
 #ifndef _CX_H
 #define _CX_H
 
-#define CX_VERSION        "0.9.0"
+#define CX_VERSION        "1.0.0"
 
 #endif /* _CX_H */

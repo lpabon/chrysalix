@@ -103,10 +103,10 @@ static i32 do_peek(i32 argc, char **argv) {
         return (-1);
     }
 
-    address = (u8 *) atoi(argv[1]);
+    address = (u8 *) ((uintptr_t)atoi(argv[1]));
     size = atoi(argv[2]);
 
-    printf("Memory at 0x%X size of %d\n", (u32) address, size);
+    printf("Memory at 0x%X size of %d\n", (uintptr_t) address, size);
     hexprint(address, size);
 
     return (0);
@@ -129,7 +129,7 @@ static i32 do_poke(i32 argc, char **argv) {
         return (-1);
     }
 
-    address = (u32 *) atoi(argv[1]);
+    address = (u32 *) ((uintptr_t)atoi(argv[1]));
     value = atoi(argv[2]);
 
     *address = value;

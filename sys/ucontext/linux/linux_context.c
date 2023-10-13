@@ -53,19 +53,18 @@ u64 linux_get_mtime(void) {
     static int init = 0;
 
     struct timeval now;
-    struct timezone nowtz;
 
     u64 second;
 
     if (!init) {
-        gettimeofday(&now, &nowtz);
+        gettimeofday(&now, NULL);
         init = 1;
 
         first = (u64) (now.tv_sec * 1000);
         first += (u64) (now.tv_usec / 1000);
     }
 
-    gettimeofday(&now, &nowtz);
+    gettimeofday(&now, NULL);
     second = (u64) (now.tv_sec * 1000);
     second += ((u64) now.tv_usec / 1000);
 

@@ -34,7 +34,7 @@
  * Defines
  */
 #ifdef DEBUG
-#    define cx_die()                    do { i32 s; s = cx_intsoff(); while(1); } while(0);
+#    define cx_die()                    do { cx_intsoff(); while(1); } while(0);
 #    define cx_panic(...)               do { \
                                             cx_llprintf("\n" "%d:PANIC:%s:%d:", cx_getpid(), __FILE__, __LINE__); \
                                             cx_llprintf(__VA_ARGS__); \

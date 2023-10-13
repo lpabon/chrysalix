@@ -24,7 +24,7 @@ $ ./build/chrysalixos
 chrysalix Initialized
 chrysalix kernel starting...
 
-Welcome to ChrysalixOS 0.9.0 (ucontext)
+Welcome to ChrysalixOS 1.0.0 (ucontext)
     compiled Aug 21 2022 12:33:32
 
 

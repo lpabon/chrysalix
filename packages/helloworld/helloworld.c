@@ -47,7 +47,6 @@ void helloworld_console_register(void) {
 
 static i32 do_helloworld(i32 argc _UNUSED_, char **argv _UNUSED_) {
     printf("From the helloworld package: Hello World\n");
-    printf("hello isabella\n");
 
     return (0);
 }

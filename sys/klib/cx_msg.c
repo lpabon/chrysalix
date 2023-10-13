@@ -62,7 +62,7 @@ i32 cx_msg_init(void) {
     return (0);
 }
 
-i32 cx_msg_send(ND_t nd, struct msg *msg, u32 flags, i32 tm) {
+i32 cx_msg_send(ND_t nd, struct msg *msg, _UNUSED_ u32 flags, _UNUSED_ i32 tm) {
     PCB_t *srv_pcb;
 
     /*
@@ -112,7 +112,7 @@ i32 cx_msg_send(ND_t nd, struct msg *msg, u32 flags, i32 tm) {
     return (0);
 }
 
-i32 cx_msg_recv(ND_t nd, struct msg *msg, u32 flags, i32 tm) {
+i32 cx_msg_recv(_UNUSED_ ND_t nd, struct msg *msg, _UNUSED_ u32 flags, _UNUSED_ i32 tm) {
     PCB_t *current_pcb;
 
     /*
@@ -139,7 +139,7 @@ i32 cx_msg_recv(ND_t nd, struct msg *msg, u32 flags, i32 tm) {
 }
 
 
-i32 cx_msg_reply(ND_t nd, struct msg *msg, u32 flags, i32 tm) {
+i32 cx_msg_reply(_UNUSED_ ND_t nd, struct msg *msg, _UNUSED_ u32 flags, _UNUSED_ i32 tm) {
     PCB_t *current_pcb;
 
     /*
@@ -172,10 +172,8 @@ i32 cx_msg_reply(ND_t nd, struct msg *msg, u32 flags, i32 tm) {
 
 static i32 do_msg(i32 argc, char **argv) {
     struct msg msg;
-    i32 params;
 
     printf(" - - Msg test [WORKER] - - \n");
-    params = argc;
     for (argc--; argc >= 0; argc--) {
         msg.msg_source = cx_getpid();
         msg.msg = (void *) argv[argc];
@@ -187,7 +185,7 @@ static i32 do_msg(i32 argc, char **argv) {
     return (0);
 }
 
-static void msg_print_server(i32 arg) {
+static void msg_print_server(_UNUSED_ i32 arg) {
     struct msg msg;
     i32 pid;
 

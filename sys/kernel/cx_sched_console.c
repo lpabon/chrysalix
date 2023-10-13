@@ -152,13 +152,13 @@ static i32 do_pdump(i32 argc, char **argv) {
     pcb = cx_get_pcb(pid);
     if (NULL != pcb) {
         printf("Pdump %s - PID %u\n\n", pcb->th_name, pid);
-        printf("&Ctx = 0x%X size %u\n", (u32) & pcb->ctx,
+        printf("&Ctx = 0x%X size %u\n", (uintptr_t) & pcb->ctx,
                sizeof(struct context));
         arch_context_print(&pcb->ctx);
 
         printf("\n"
                "Fnc = 0x%X ( arg:%d )\n",
-               (u32) pcb->entry_info.fnc, pcb->entry_info.arg);
+               (uintptr_t) pcb->entry_info.fnc, pcb->entry_info.arg);
         printf("Stk = 0x%X size:%u\n",
                pcb->stack_info.stack, pcb->stack_info.stack_size);
         printf("Attr = 0x%X\n", pcb->th_attr);

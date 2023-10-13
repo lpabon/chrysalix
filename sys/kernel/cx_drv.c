@@ -362,7 +362,7 @@ i32 cx_close(fd_t fd) {
 }
 
 /* ------------------------------------------------------------ */
-i32 cx_lseek(fd_t fd, i32 offset, i32 whence) {
+i32 cx_lseek(_UNUSED_ fd_t fd, _UNUSED_ i32 offset, _UNUSED_ i32 whence) {
     return (-ENOTSUP);
 }
 

@@ -35,6 +35,7 @@
 
 // Prototypes
 void add(i32 arg);
+void test_sync(void);
 
 void test_threading(void) {
     test_sync();

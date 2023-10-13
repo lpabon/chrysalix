@@ -101,5 +101,5 @@ unsigned long cx_intsoff(void) {
     return 0;
 }
 
-void cx_intson(unsigned long s) {
+void cx_intson(_UNUSED_ unsigned long s) {
 };

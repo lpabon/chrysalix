@@ -146,10 +146,10 @@ static int prex_divide(long *n, int base) {
     return res;
 }
 
-static int prex_atoi(const char **s) {
+int prex_atoi(const char *s) {
     int i = 0;
-    while (isdigit((int) **s))
-        i = i * 10 + *((*s)++) - '0';
+    while (isdigit((int) *s))
+        i = i * 10 + *(s++) - '0';
     return i;
 }
 
@@ -179,7 +179,7 @@ i32 cx_vsprintf(char *buf, const char *fmt, va_list args) {
          */
         width = -1;
         if (isdigit(*fmt)) {
-            width = prex_atoi(&fmt);
+            width = prex_atoi(fmt);
         }
         base = 10;
         sign = 0;

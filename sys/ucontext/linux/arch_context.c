@@ -34,6 +34,13 @@
 #define NULL 0
 #endif
 
+/*
+ * Define GNU GCC attribute
+ */
+#  ifndef _UNUSED_
+#    define _UNUSED_ __attribute__ ((unused))
+#  endif
+
     /*
      * For UNIT8/u16..etc
      */
@@ -76,10 +83,9 @@ static u8 sched_stack[SCHEDSTKSZ];
 static struct context blah;
 
 /* ------------------------------------------------------------ */
-static void linux_entry_point(void *arg) {
+static void linux_entry_point(void) {
     PCB_t *pcb;
 
-    (void) arg;
     linux_entry_point_setup();
 
     pcb = cx_get_current_pcb();
@@ -92,7 +98,7 @@ static void linux_entry_point(void *arg) {
 }
 
 /* ------------------------------------------------------------ */
-static void sched_schedule_thread(i32 arg) {
+static void sched_schedule_thread(_UNUSED_ i32 arg) {
     while (1) {
         cx_sched_schedule();
     }
@@ -173,7 +179,7 @@ void arch_context_create_sched(PCB_t * sched_pcb) {
  *
  *   void exception_handler(int exc, void *regs);
  */
-void arch_context_save(struct context *ctx, int exc) {
+void arch_context_save(_UNUSED_ struct context *ctx, _UNUSED_ int exc) {
     /* TODO: need to handle ARM exception */
 }
 
@@ -182,11 +188,11 @@ void arch_context_save(struct context *ctx, int exc) {
  *
  * @regs: pointer to user mode register context.
  */
-void arch_context_restore(struct context *ctx, void *regs) {
+void arch_context_restore(_UNUSED_ struct context *ctx, _UNUSED_ void *regs) {
 
 }
 
-void arch_context_print(struct context *ctx) {
+void arch_context_print(_UNUSED_ struct context *ctx) {
     printf("LinuxUcontextStuffHere\n");
 }
 

@@ -30,17 +30,37 @@
 #ifndef _CX_STRING_H
 #define _CX_STRING_H
 
-/*****************************************************************
- * Defines
- */
 
 /*****************************************************************
  * Prototypes
  */
-char *strncpy(char *dest, const char *src, i32 count);
-int  strncmp(const char *src, const char *tgt, i32 count);
+char *cx_strncpy(char *dest, const char *src, i32 count);
+int  cx_strncmp(const char *src, const char *tgt, i32 count);
 i32  cx_strnlen(const char *str, i32 count);
-void *memcpy(void *dest, const void *src, i32 count);
-void *memset(void *dest, int ch, i32 count);
+void *cx_memcpy(void *dest, const void *src, i32 count);
+void *cx_memset(void *dest, int ch, i32 count);
+void cx_llprintf(const char *fmt, ...);
+void cx_printf(const char *fmt, ...);
+void cx_sprintf(char *buf, const char *fmt, ...);
+void cx_fprintf(fd_t stream, const char *fmt, ...);
+void cx_vfprintf(fd_t stream, const char *fmt, va_list args);
+i32 cx_vsprintf(char *buf, const char *fmt, va_list args);
+int prex_atoi(const char *s);
+
+
+/*****************************************************************
+ * Defines
+ */
+#define strncpy cx_strncpy
+#define strncmp cx_strncmp
+#define strlen cx_strnlen
+#define memcpy cx_memcpy
+#define memset cx_memset
+#define llprintf cx_llprintf
+#define printf cx_printf
+#define sprintf cx_sprintf
+#define fprintf cx_fprintf
+#define vsprintf cx_vsprintf
+#define atoi prex_atoi
 
 #endif /* _CX_STRING_H */

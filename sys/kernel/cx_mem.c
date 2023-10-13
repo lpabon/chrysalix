@@ -277,7 +277,7 @@ static i32 do_mem(i32 argc _UNUSED_, char **argv _UNUSED_) {
         p = cx_get_heap(i)->heap_start;
         printf("Memory %u\n", i);
         do {
-            printf("p 0x%X - z %d\n", (u32) p,
+            printf("p 0x%X - z %d\n", (uintptr_t) p,
                    p->size * sizeof(struct mem));
             p = p->next;
 

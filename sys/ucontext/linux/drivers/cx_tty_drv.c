@@ -88,7 +88,7 @@ i32 tty_init(drv_t minor) {
  *   Number of bytes written, or
  *      -1 for failure.
  */
-static i32 tty_read(fd_t fd, void *buf, i32 size, i32 timeout) {
+static i32 tty_read(_UNUSED_ fd_t fd, void *buf, i32 size, _UNUSED_ i32 timeout) {
     return (lc_read(buf, size));
 }
 
@@ -108,6 +108,6 @@ static i32 tty_read(fd_t fd, void *buf, i32 size, i32 timeout) {
  *   Number of bytes written, or
  *      -1 for failure.
  */
-static i32 tty_write(fd_t fd, void *buf, i32 size, i32 timeout) {
+static i32 tty_write(_UNUSED_ fd_t fd, void *buf, i32 size, _UNUSED_ i32 timeout) {
     return (lc_write(buf, size));
 }

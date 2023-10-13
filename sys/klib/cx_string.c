@@ -62,6 +62,7 @@
  * string.c - Minimum string library for kernel
  */
 
+#include <stdarg.h>
 #include <arch_types.h>
 #include <chrysalix/cx_string.h>
 
