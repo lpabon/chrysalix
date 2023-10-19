@@ -104,7 +104,7 @@ LIBGCC_PATH := $(dir $(shell $(CC) $(GLOBAL_CFLAGS) -print-libgcc-file-name))
 endif
 
 ASFLAGS	+=
-CFLAGS	+= -Wall -Wextra -Werror -std=c99 -pipe -fno-strict-aliasing $(DEF_FLAGS)
+CFLAGS	+= -Wall -Wextra -Werror -Wno-deprecated-declarations -std=c99 -pipe -fno-strict-aliasing $(DEF_FLAGS)
 CPPFLAGS += $(DEF_FLAGS)
 LDFLAGS	+= -L$(CX_BUILD)
 
